@@ -204,11 +204,9 @@
 </head>
 <body>
     <header>
-        <div>
-            <img src="../img/logo.png" alt="Логотип">
-        </div>
-        <div class="center-text">
-            <span>Мой город <br> - <br>мой космос</span>
+        <div style="display: flex; align-items: center;">
+            <img src="../img/logo.png" alt="Логотип" style="height: 40px; margin-right: 10px;">
+            <span style="font-size: 18px; font-weight: bold;">Мой город - мой космос</span>
         </div>
         <nav>
             <a href="#">Регистрация</a>
@@ -220,9 +218,9 @@
             <a href="#">Контакты</a>
             <button id="theme-toggle">Тема</button>
         </nav>
-    </header>
+    </header>    
     <section>
-        <h2>Поиск конкурсов</h2>
+        <h2>Популярные конкурсы</h2>
         <div class="search-form">
             <input type="text" placeholder="Введите название или описание конкурса" list="search-suggestions">
             <datalist id="search-suggestions">
@@ -234,53 +232,50 @@
             </datalist>
             <button type="button">Поиск</button>
         </div>
-    </section>
-    <section>
-        <h2>Популярные конкурсы</h2>
         <div class="slider">
             <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
-                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
-                <h3>Конкурс 1</h3>
-                <p>Краткое описание конкурса.</p>
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
-                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
+                <img src="../img/konk1.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3>Конкурс "Космический рассказ"</h3>
+                <p>Напиши захватывающую историю о покорении далёких галактик, встрече с инопланетянами или загадках чёрных дыр. Открой читателям дверь в бесконечный космос!</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                </div>                
+            </div>
+            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
+                <img src="../img/konk2.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3>Конкурс "Модель вселенной"</h3>
+                <p>Представь, что ты архитектор Вселенной! Создай модель галактики, планетной системы или даже целого космоса. Используй любые материалы: 3D-графику, макеты, рисунки или компьютерные симуляции. Покажи, как ты представляешь бесконечный космос и его законы!</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                </div>                
+            </div>
+            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
+                <img src="../img/konk3.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3>Конкурс "Галактический художник"</h3>
+                <p>Создай уникальную космическую картину! Изобрази планеты, звезды, туманности или фантастических инопланетян. Лучшие работы украсят выставку будущего!</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
                 </div>
             </div>
             <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
-                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
-                <h3>Конкурс 1</h3>
-                <p>Краткое описание конкурса.</p>
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
-                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
-                </div>
-            </div>
-            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
-                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
-                <h3>Конкурс 1</h3>
-                <p>Краткое описание конкурса.</p>
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
-                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
-                </div>
-            </div>
-            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
-                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
-                <h3>Конкурс 1</h3>
-                <p>Краткое описание конкурса.</p>
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
-                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
-                </div>
+                <img src="../img/konk4.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3>Конкурс "Ракета будущего"</h3>
+                <p>Спроектируй и нарисуй свою идеальную ракету! Какой она будет – гиперскоростной, межгалактической или даже с квантовым двигателем?</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                </div>                
             </div><div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
-                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
-                <h3>Конкурс 1</h3>
-                <p>Краткое описание конкурса.</p>
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
-                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
-                </div>
+                <img src="../img/konk5.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3>Конкурс "Ближний космос"</h3>
+                <p> Изучи и покажи, каким ты видишь околоземное пространство! Спутники, космические станции, луноходы, астероиды – создай макет, рисунок или 3D-модель объектов, находящихся рядом с нашей планетой. Может, ты придумаешь новый космический аппарат или колонию на Луне? Дай волю фантазии и покори ближний космос! </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                </div>                
             </div>
         </div>
     </section>
@@ -288,21 +283,21 @@
         <h2>Отзывы</h2>
         <div class="slider">
             <div>
-                <img src="author1.jpg" alt="Автор 1" style="width: 100%; border-radius: 4px;">
+                <img src="../img/author1.webp" alt="Автор 1" style="width: 100%; border-radius: 4px; height: 200px;">
                 <h3>Иван Иванов</h3>
                 <p>Отзыв: Очень понравился конкурс, организовано на высшем уровне!</p>
                 <p>Дата: 20.01.2025</p>
                 <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о конкурсе</button>
             </div>
             <div>
-                <img src="author2.jpg" alt="Автор 2" style="width: 100%; border-radius: 4px;">
+                <img src="../img/author2.jpg" alt="Автор 2" style="width: 100%; border-radius: 4px; height: 200px;">
                 <h3>Мария Петрова</h3>
                 <p>Отзыв: Прекрасное мероприятие, обязательно буду участвовать снова!</p>
                 <p>Дата: 18.01.2025</p>
                 <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о конкурсе</button>
             </div>
             <div>
-                <img src="author3.jpg" alt="Автор 3" style="width: 100%; border-radius: 4px;">
+                <img src="../img/author3.jpg" alt="Автор 3" style="width: 100%; border-radius: 4px;">
                 <h3>Алексей Смирнов</h3>
                 <p>Отзыв: Узнал много нового, все было на высшем уровне.</p>
                 <p>Дата: 15.01.2025</p>
@@ -328,19 +323,19 @@
         <h2>О нас</h2>
         <div style="display: flex; gap: 20px;">
             <p>Ярославская область — древний регион с богатейшей историей и великолепной природой. Один из символов ярославской области – это Валентина Терешкова. Первая женщина-космонавт родилась и начинала карьеру в авиации в Ярославской области. Ярославскую область она представляла как депутат в Верховном Совете СССР, была депутатом Ярославской областной Думы, а сейчас представляет регион в Госдуме. В центре Ярославля есть улица Терешковой, ее имя носит ярославский планетарий. Валентина Владимировна, пожалуй, самая известная ярославна.</p>
-            <img src="../img/logo.png" alt="О нас" style="width: 200px; border-radius: 4px;">
+            <img src="../img/piglet.gif" alt="О нас" style="width: 200px; border-radius: 4px;">
         </div>
     </section>
     <section>
         <h2>Подписка на новости</h2>
         <div class="subscribe-form">
-            <form>
-                <input type="email" placeholder="Введите ваш email" required>
-                <label>
+            <form style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <input type="email" placeholder="Введите ваш email" required style="flex-grow: 1; padding: 10px; border: 1px solid #4a5568; border-radius: 4px; background-color: #1a202c; color: white; min-width: 200px;">
+                <label style="display: flex; align-items: center; gap: 5px; color: white; white-space: nowrap;">
                     <input type="checkbox" required>
-                    Я соглашаюсь на обработку персональных данных
+                    <span>Я соглашаюсь на обработку моих данных</span>
                 </label>
-                <button type="submit">Подписаться</button>
+                <button type="submit" style="padding: 10px 20px; background-color: #63b3ed; border: none; border-radius: 4px; color: white; cursor: pointer;">Подписаться</button>
             </form>
         </div>
     </section>
