@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой город - мой космос</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a202c;
+            color: white;
+        }
+        header {
+            background-color: #2d3748;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        header nav a:hover {
+            color: #63b3ed;
+        }
+        #theme-toggle {
+            background-color: #4a5568;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        section {
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px; /* Расстояние между карточками */
+    padding-bottom: 10px; /* Защитный отступ, чтобы элементы не выходили */
+}
+
+.slider div {
+    flex: 0 0 300px; /* Жестко фиксируем ширину карточки */
+    background-color: #2d3748;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.slider div img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.slider div h3,
+.slider div p {
+    margin: 10px 0;
+}
+
+.slider div .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: nowrap; /* Запрещаем перенос элементов */
+    white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+.slider div .card-footer span {
+    white-space: nowrap; /* Предотвращает перенос звезд */
+}
+
+.slider div .card-footer button {
+    background: none;
+    border: none;
+    color: #63b3ed;
+    cursor: pointer;
+    white-space: nowrap; /* Предотвращает перенос кнопки */
+}
+        footer {
+            background-color: #2d3748;
+            text-align: center;
+            padding: 10px;
+        }
+        .auth-form {
+            background-color: #2d3748;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .auth-form input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #4a5568;
+            border-radius: 4px;
+            background-color: #1a202c;
+            color: white;
+        }
+        .auth-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #63b3ed;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .auth-form button:hover {
+            background-color: #4299e1;
+        }
+        .auth-form a {
+            color: #63b3ed;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .auth-form a:hover {
+            color: #4299e1;
+        }
+        .center-text {
+            text-align: center;
+        }
+        .search-form {
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+            gap: 10px;
+        }
+        .search-form input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #4a5568;
+            border-radius: 4px;
+            background-color: #1a202c;
+            color: white;
+        }
+        .search-form button {
+            padding: 10px 20px;
+            background-color: #63b3ed;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+        }
+        .search-form button:hover {
+            background-color: #4299e1;
+        }
+        .subscribe-form {
+            background-color: #2d3748;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .subscribe-form input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #4a5568;
+            border-radius: 4px;
+            background-color: #1a202c;
+            color: white;
+        }
+        .subscribe-form label {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            color: white;
+        }
+        .subscribe-form label input {
+            margin-right: 10px;
+        }
+        .subscribe-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #63b3ed;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .subscribe-form button:hover {
+            background-color: #4299e1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="../img/logo.png" alt="Логотип">
+        </div>
+        <div class="center-text">
+            <span>Мой город <br> - <br>мой космос</span>
+        </div>
+        <nav>
+            <a href="#">Регистрация</a>
+            <a href="#">Авторизация</a>
+            <a href="#">Личный кабинет</a>
+            <a href="#">О нас</a>
+            <a href="#">Конкурсы</a>
+            <a href="#">Поиск</a>
+            <a href="#">Контакты</a>
+            <button id="theme-toggle">Тема</button>
+        </nav>
+    </header>
+    <section>
+        <h2>Поиск конкурсов</h2>
+        <div class="search-form">
+            <input type="text" placeholder="Введите название или описание конкурса" list="search-suggestions">
+            <datalist id="search-suggestions">
+                <option value="Конкурс 1">
+                <option value="Конкурс 2">
+                <option value="Конкурс 3">
+                <option value="Научный конкурс">
+                <option value="Творческий конкурс">
+            </datalist>
+            <button type="button">Поиск</button>
+        </div>
+    </section>
+    <section>
+        <h2>Популярные конкурсы</h2>
+        <div class="slider">
+            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
+                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
+                <h3>Конкурс 1</h3>
+                <p>Краткое описание конкурса.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
+                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
+                </div>
+            </div>
+            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
+                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
+                <h3>Конкурс 1</h3>
+                <p>Краткое описание конкурса.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
+                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
+                </div>
+            </div>
+            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
+                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
+                <h3>Конкурс 1</h3>
+                <p>Краткое описание конкурса.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
+                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
+                </div>
+            </div>
+            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
+                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
+                <h3>Конкурс 1</h3>
+                <p>Краткое описание конкурса.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
+                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
+                </div>
+            </div><div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
+                <img src="../img/logo.png" alt="Конкурс 1" style="width: 100%; border-radius: 4px;">
+                <h3>Конкурс 1</h3>
+                <p>Краткое описание конкурса.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; overflow: hidden;">
+                    <span style="white-space: nowrap;">⭐⭐⭐⭐⭐</span>
+                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap;">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Отзывы</h2>
+        <div class="slider">
+            <div>
+                <img src="author1.jpg" alt="Автор 1" style="width: 100%; border-radius: 4px;">
+                <h3>Иван Иванов</h3>
+                <p>Отзыв: Очень понравился конкурс, организовано на высшем уровне!</p>
+                <p>Дата: 20.01.2025</p>
+                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о конкурсе</button>
+            </div>
+            <div>
+                <img src="author2.jpg" alt="Автор 2" style="width: 100%; border-radius: 4px;">
+                <h3>Мария Петрова</h3>
+                <p>Отзыв: Прекрасное мероприятие, обязательно буду участвовать снова!</p>
+                <p>Дата: 18.01.2025</p>
+                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о конкурсе</button>
+            </div>
+            <div>
+                <img src="author3.jpg" alt="Автор 3" style="width: 100%; border-radius: 4px;">
+                <h3>Алексей Смирнов</h3>
+                <p>Отзыв: Узнал много нового, все было на высшем уровне.</p>
+                <p>Дата: 15.01.2025</p>
+                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о конкурсе</button>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section>
+        <h2>Авторизация</h2>
+        <div class="auth-form">
+            <form>
+                <input type="email" placeholder="Введите email" required>
+                <input type="password" placeholder="Введите пароль" required>
+                <button type="submit">Войти</button>
+                <a href="#">Забыли пароль?</a>
+            </form>
+        </div>
+    </section>
+    
+    <section>
+        <h2>О нас</h2>
+        <div style="display: flex; gap: 20px;">
+            <p>Ярославская область — древний регион с богатейшей историей и великолепной природой. Один из символов ярославской области – это Валентина Терешкова. Первая женщина-космонавт родилась и начинала карьеру в авиации в Ярославской области. Ярославскую область она представляла как депутат в Верховном Совете СССР, была депутатом Ярославской областной Думы, а сейчас представляет регион в Госдуме. В центре Ярославля есть улица Терешковой, ее имя носит ярославский планетарий. Валентина Владимировна, пожалуй, самая известная ярославна.</p>
+            <img src="../img/logo.png" alt="О нас" style="width: 200px; border-radius: 4px;">
+        </div>
+    </section>
+    <section>
+        <h2>Подписка на новости</h2>
+        <div class="subscribe-form">
+            <form>
+                <input type="email" placeholder="Введите ваш email" required>
+                <label>
+                    <input type="checkbox" required>
+                    Я соглашаюсь на обработку персональных данных
+                </label>
+                <button type="submit">Подписаться</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>Контакты: <a href="tel:+74852729361" style="color: #63b3ed;">+7 (4852) 72-93-61</a></p>
+        <p>Email: <a href="mailto:yarplaneta@gmail.com" style="color: #63b3ed;">yarplaneta@gmail.com</a></p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? '#1a202c' : 'white';
+            document.body.style.color = document.body.style.color === 'black' ? 'white' : 'black';
+        });
+    </script>
+</body>
+</html>
