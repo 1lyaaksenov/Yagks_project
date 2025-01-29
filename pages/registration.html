@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - Мой город - мой космос</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a202c;
+            color: white;
+        }
+
+        header {
+            background-color: #2d3748;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        header nav a:hover {
+            color: #63b3ed;
+        }
+
+        #theme-toggle {
+            background-color: #4a5568;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .registration-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .registration-form {
+            background-color: #2d3748;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-form h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #63b3ed;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #e2e8f0;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #4a5568;
+            border-radius: 4px;
+            background-color: #1a202c;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #63b3ed;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+
+        .register-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #63b3ed;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-button:hover {
+            background-color: #4299e1;
+        }
+
+        .register-button:disabled {
+            background-color: #718096;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .auth-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .auth-links a {
+            color: #63b3ed;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .auth-links a:hover {
+            color: #4299e1;
+        }
+
+        .error-message {
+            color: #fc8181;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+
+        .invalid-input {
+            border-color: #fc8181 !important;
+        }
+
+        footer {
+            background-color: #2d3748;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="../img/logo.png" alt="Логотип">
+        </div>
+        <div class="center-text">
+            <span>Мой город <br> - <br>мой космос</span>
+        </div>
+        <nav>
+            <a href="registration.html">Регистрация</a>
+            <a href="authorization.html">Авторизация</a>
+            <a href="#">Личный кабинет</a>
+            <a href="#">О нас</a>
+            <a href="#">Конкурсы</a>
+            <a href="#">Поиск</a>
+            <a href="#">Контакты</a>
+            <button id="theme-toggle">Тема</button>
+        </nav>
+    </header>
+
+    <div class="registration-container">
+        <div class="registration-form">
+            <h1>Регистрация</h1>
+            <form id="registrationForm" action="index.html" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="username">Имя пользователя</label>
+                    <input type="text" id="username" required placeholder="Введите имя пользователя">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Введите email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" required placeholder="Введите пароль" 
+                           onkeyup="checkPasswords()">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Подтверждение пароля</label>
+                    <input type="password" id="confirm-password" required placeholder="Подтвердите пароль" 
+                           onkeyup="checkPasswords()">
+                    <div id="passwordError" class="error-message">Пароли не совпадают</div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Я согласен с условиями использования и политикой конфиденциальности</label>
+                </div>
+                <button type="submit" id="registerButton" class="register-button">Зарегистрироваться</button>
+                <div class="auth-links">
+                    <span>Уже есть аккаунт?</span>
+                    <a href="authorization.html">Авторизоваться</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Мой город - мой космос. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function checkPasswords() {
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm-password');
+            const errorMessage = document.getElementById('passwordError');
+            const registerButton = document.getElementById('registerButton');
+            
+            if (password.value !== confirmPassword.value) {
+                errorMessage.classList.add('visible');
+                password.classList.add('invalid-input');
+                confirmPassword.classList.add('invalid-input');
+                registerButton.disabled = true;
+                return false;
+            } else {
+                errorMessage.classList.remove('visible');
+                password.classList.remove('invalid-input');
+                confirmPassword.classList.remove('invalid-input');
+                registerButton.disabled = false;
+                return true;
+            }
+        }
+
+        function validateForm() {
+            // Проверяем совпадение паролей перед отправкой формы
+            if (!checkPasswords()) {
+                return false; // Предотвращаем отправку формы
+            }
+
+            // Проверяем, что все поля заполнены
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const terms = document.getElementById('terms').checked;
+
+            if (!username || !email || !terms) {
+                alert('Пожалуйста, заполните все поля и примите условия использования');
+                return false;
+            }
+
+            // Если все проверки пройдены, разрешаем отправку формы
+            return true;
+        }
+
+        // Добавляем слушатели событий при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registrationForm');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm-password');
+
+            // Проверяем пароли при первой загрузке
+            checkPasswords();
+
+            // Добавляем слушатели для проверки при вводе
+            password.addEventListener('input', checkPasswords);
+            confirmPassword.addEventListener('input', checkPasswords);
+
+            // Добавляем слушатель для кнопки темы
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                document.body.classList.toggle('dark-theme');
+            });
+        });
+    </script>
+</body>
+</html>
