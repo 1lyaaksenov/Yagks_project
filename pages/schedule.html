@@ -24,8 +24,6 @@
         }
 
         .navbar {
-            margin-right: -18px;
-            margin-left: -18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,10 +48,23 @@
             cursor: pointer;
         }
 
+        .navbar-toggler:hover {
+            background-color: #babbbb;
+            border-radius: 5px;
+        }
+
         .navbar-nav {
             background-color: #2d3748;
             display: flex;
 
+        }
+
+        .nav-button {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: 0.3s;
+            background-color: #2d3748;
         }
 
         .nav-link {
@@ -68,7 +79,7 @@
             border-radius: 5px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1050px) {
             .navbar-nav {
                 display: none;
                 flex-direction: column;
@@ -124,9 +135,6 @@
             background-color: #2d3748;
             text-align: center;
             padding: 10px;
-            margin-left: -20px;
-            margin-right: -20px;
-            margin-bottom: -20px;
         }
     </style>
 </head>
@@ -147,6 +155,7 @@
                 <a class="nav-link" href="#">О нас</a>
                 <a class="nav-link" href="#">Поиск</a>
                 <a class="nav-link" href="#">Контакты</a>
+                <button class="nav-button" id="theme-toggle">Тема</button>
             </div>
         </nav>
 
@@ -262,7 +271,7 @@
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', () => {
         document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? '#1a202c' : 'white';
-        document.body.style.color = document.body.style.color === 'black' ? 'white' : 'black';
+        document.body.main.style.color = document.body.style.color === 'black' ? 'white' : 'black';
     });
 
     function toggleMenu() {
