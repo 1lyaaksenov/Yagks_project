@@ -5,105 +5,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Расписание конкурсов</title>
+    <style>
+        body {
+            padding: 0px;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-color: #1a202c;
+        }
+
+        body a {
+            color: #63b3ed;
+        }
+
+        main {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* 1fr для основного контента, auto для футера */
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            background-color: #2d3748;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -10px;
+            margin-right: -20px;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        header nav a:hover {
+            color: #63b3ed;
+        }
+
+        #theme-toggle {
+            background-color: #4a5568;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .content-div {
+            padding: 30px;
+        }
+
+        .content-div td {
+            height: 50px;
+            border: 2px rgb(179, 179, 179) solid;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2d3748;
+            text-align: center;
+            padding: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-bottom: -20px;
+        }
+    </style>
 </head>
 
 <body>
+    <main>
+        <header>
+            <div style="display: flex; align-items: center;">
+                <img src="../img/logo.png" alt="Логотип" style="height: 40px; margin-right: 10px;">
+                <span style="font-size: 18px; font-weight: bold;">Мой город - мой космос</span>
+            </div>
+            <nav>
+                <a href="#">Регистрация</a>
+                <a href="#">Авторизация</a>
+                <a href="#">Личный кабинет</a>
+                <a href="#">О нас</a>
+                <a href="#">Конкурсы</a>
+                <a href="#">Поиск</a>
+                <a href="#">Контакты</a>
+                <button id="theme-toggle">Тема</button>
+            </nav>
+        </header>
+        <div class="content-div">
 
-    <p>Расписание конкурсов</p>
 
-    <table>
+            <h1>Расписание конкурсов</h1>
+            <table>
 
-        <tr>
-            <td>Время проведения/Конкурсы</td>
-            <td>c 9:00 до 10:00</td>
-            <td>с 10:00 до 11:00</td>
-            <td>с 11:00 до 12:00</td>
-            <td>с 12:00 до 13:00</td>
-            <td>с 13:00 до 14:00</td>
-            <td>с 14:00 до 15:00</td>
-            <td>с 15:00 до 16:00</td>
-            <td>с 16:00 до 17:00</td>
-            <td>с 17:00 до 18:00</td>
-            <td>с 18:00 до 19:00</td>
-            <td>с 20:00 до 21:00</td>
-        </tr>
+                <tr>
+                    <td>Время проведения/Конкурсы</td>
+                    <td>c 9:00 до 10:00</td>
+                    <td>с 10:00 до 11:00</td>
+                    <td>с 11:00 до 12:00</td>
+                    <td>с 12:00 до 13:00</td>
+                    <td>с 13:00 до 14:00</td>
+                    <td>с 14:00 до 15:00</td>
+                    <td>с 15:00 до 16:00</td>
+                    <td>с 16:00 до 17:00</td>
+                    <td>с 17:00 до 18:00</td>
+                    <td>с 18:00 до 19:00</td>
+                    <td>с 20:00 до 21:00</td>
+                </tr>
 
-        <tr>
-            <td><a href="konkurs1.html">Космический рассказ</a></td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-        </tr>
+                <tr>
+                    <td><a href="konkurs1.html">Космический рассказ</a></td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                </tr>
 
-        <tr>
-            <td><a href="konkurs2.html">Модель вселенной</a></td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-        </tr>
+                <tr>
+                    <td><a href="konkurs2.html">Модель вселенной</a></td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                </tr>
 
-        <tr>
-            <td><a href="konkurs3.html">Галактический художник</a></td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-        </tr>
+                <tr>
+                    <td><a href="konkurs3.html">Галактический художник</a></td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                </tr>
 
-        <tr>
-            <td><a href="konkurs4.html">Ракета будущего</a></td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-        </tr>
+                <tr>
+                    <td><a href="konkurs4.html">Ракета будущего</a></td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                </tr>
 
-        <tr>
-            <td><a href="konkurs5.html">Ближний космос</a></td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-            <td>0 мест</td>
-        </tr>
+                <tr>
+                    <td><a href="konkurs5.html">Ближний космос</a></td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                    <td>0 мест</td>
+                </tr>
 
-    </table>
+            </table>
+        </div>
+
+        <footer>
+            <p>Контакты: <a href="tel:+74852729361">+7 (4852) 72-93-61</a></p>
+            <p>Email: <a href="mailto:yarplaneta@gmail.com">yarplaneta@gmail.com</a></p>
+        </footer>
+
+    </main>
 </body>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? '#1a202c' : 'white';
+        document.body.style.color = document.body.style.color === 'black' ? 'white' : 'black';
+    });
+</script>
 
 </html>
