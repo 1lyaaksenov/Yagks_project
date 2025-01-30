@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,88 +12,151 @@
             background-color: #1a202c;
             color: white;
         }
-        header {
-            background-color: #2d3748;
-            padding: 10px 20px;
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #2d3748;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        header img {
-            height: 40px;
-        }
-        header nav a {
-            color: white;
+
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
             text-decoration: none;
-            margin: 0 10px;
-        }
-        header nav a:hover {
-            color: #63b3ed;
-        }
-        #theme-toggle {
-            background-color: #4a5568;
             color: white;
+        }
+
+        .navbar-toggler {
+            color: white;
+            display: none;
+            font-size: 1.5em;
+            background: none;
             border: none;
-            border-radius: 50%;
-            padding: 5px 10px;
             cursor: pointer;
         }
+
+        .navbar-toggler:hover {
+            background-color: #babbbb;
+            border-radius: 5px;
+        }
+
+        .navbar-nav {
+            background-color: #2d3748;
+            display: flex;
+
+        }
+
+        .nav-button {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: 0.3s;
+            background-color: #2d3748;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #babbbb;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 1050px) {
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: #2d3748;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+            }
+
+            .navbar-nav.show {
+                display: flex;
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
+        }
+
         section {
             padding: 20px;
             margin: 10px 0;
         }
+
         .slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px; /* Расстояние между карточками */
-    padding-bottom: 10px; /* Защитный отступ, чтобы элементы не выходили */
-}
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            /* Расстояние между карточками */
+            padding-bottom: 10px;
+            /* Защитный отступ, чтобы элементы не выходили */
+        }
 
-.slider div {
-    flex: 0 0 300px; /* Жестко фиксируем ширину карточки */
-    background-color: #2d3748;
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
+        .slider div {
+            flex: 0 0 300px;
+            /* Жестко фиксируем ширину карточки */
+            background-color: #2d3748;
+            border-radius: 8px;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
 
-.slider div img {
-    width: 100%;
-    border-radius: 4px;
-}
+        .slider div img {
+            width: 100%;
+            border-radius: 4px;
+        }
 
-.slider div h3,
-.slider div p {
-    margin: 10px 0;
-}
+        .slider div h3,
+        .slider div p {
+            margin: 10px 0;
+        }
 
-.slider div .card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    flex-wrap: nowrap; /* Запрещаем перенос элементов */
-    white-space: nowrap; /* Предотвращает перенос текста */
-}
+        .slider div .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            flex-wrap: nowrap;
+            /* Запрещаем перенос элементов */
+            white-space: nowrap;
+            /* Предотвращает перенос текста */
+        }
 
-.slider div .card-footer span {
-    white-space: nowrap; /* Предотвращает перенос звезд */
-}
+        .slider div .card-footer span {
+            white-space: nowrap;
+            /* Предотвращает перенос звезд */
+        }
 
-.slider div .card-footer button {
-    background: none;
-    border: none;
-    color: #63b3ed;
-    cursor: pointer;
-    white-space: nowrap; /* Предотвращает перенос кнопки */
-}
+        .slider div .card-footer button {
+            background: none;
+            border: none;
+            color: #63b3ed;
+            cursor: pointer;
+            white-space: nowrap;
+            /* Предотвращает перенос кнопки */
+        }
+
         footer {
             background-color: #2d3748;
             text-align: center;
             padding: 10px;
         }
+
         .auth-form {
             background-color: #2d3748;
             padding: 20px;
@@ -100,6 +164,7 @@
             max-width: 400px;
             margin: 20px auto;
         }
+
         .auth-form input {
             width: 95%;
             padding: 10px;
@@ -109,6 +174,7 @@
             background-color: #1a202c;
             color: white;
         }
+
         .auth-form button {
             width: 100%;
             padding: 10px;
@@ -119,9 +185,11 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         .auth-form button:hover {
             background-color: #4299e1;
         }
+
         .auth-form a {
             color: #63b3ed;
             text-decoration: none;
@@ -129,18 +197,22 @@
             text-align: center;
             margin-top: 10px;
         }
+
         .auth-form a:hover {
             color: #4299e1;
         }
+
         .center-text {
             text-align: center;
         }
+
         .search-form {
             max-width: 600px;
             margin: 20px auto;
             display: flex;
             gap: 10px;
         }
+
         .search-form input {
             flex-grow: 1;
             padding: 10px;
@@ -149,6 +221,7 @@
             background-color: #1a202c;
             color: white;
         }
+
         .search-form button {
             padding: 10px 20px;
             background-color: #63b3ed;
@@ -157,9 +230,11 @@
             color: white;
             cursor: pointer;
         }
+
         .search-form button:hover {
             background-color: #4299e1;
         }
+
         .subscribe-form {
             background-color: #2d3748;
             padding: 20px;
@@ -168,6 +243,7 @@
             margin: 20px auto;
             text-align: center;
         }
+
         .subscribe-form input {
             width: 95%;
             padding: 10px;
@@ -177,15 +253,18 @@
             background-color: #1a202c;
             color: white;
         }
+
         .subscribe-form label {
             display: flex;
             align-items: center;
             margin-top: 10px;
             color: white;
         }
+
         .subscribe-form label input {
             margin-right: 10px;
         }
+
         .subscribe-form button {
             width: 100%;
             padding: 10px;
@@ -197,28 +276,40 @@
             cursor: pointer;
             margin-top: 10px;
         }
+
         .subscribe-form button:hover {
             background-color: #4299e1;
         }
+
+        .nav-button {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: 0.3s;
+            background-color: #2d3748;
+        }
     </style>
 </head>
+
 <body>
-    <header>
-        <div style="display: flex; align-items: center;">
-            <img src="../img/logo.png" alt="Логотип" style="height: 40px; margin-right: 10px;">
-            <span style="font-size: 18px; font-weight: bold;">Мой город - мой космос</span>
+    <nav class="navbar">
+        <div class="logo-div">
+            <img src="../img/logo.jpg" alt="Логотип" style="height: 90px;">
+            <a class="navbar-brand" href="#">Мой город - мой космос</a>
         </div>
-        <nav>
-            <a href="#">Регистрация</a>
-            <a href="#">Авторизация</a>
-            <a href="#">Личный кабинет</a>
-            <a href="#">О нас</a>
-            <a href="#">Конкурсы</a>
-            <a href="#">Поиск</a>
-            <a href="#">Контакты</a>
-            <button id="theme-toggle">Тема</button>
-        </nav>
-    </header>    
+
+        <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+        <div class="navbar-nav" id="navbarNav">
+            <a class="nav-link" href="registration.html">Регистрация</a>
+            <a class="nav-link" href="authorization.html">Авторизация</a>
+            <a class="nav-link" href="account.html">Личный кабинет</a>
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="schedule.html">Конкурсы</a>
+            <a class="nav-link" href="#">Поиск</a>
+            <a class="nav-link" href="#footer">Контакты</a>
+            <button class="nav-button" id="theme-toggle">Тема</button>
+        </div>
+    </nav>
     <section>
         <h2>Популярные конкурсы</h2>
         <div class="search-form">
@@ -236,46 +327,60 @@
             <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
                 <img src="../img/konk1.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
                 <h3>Конкурс "Космический рассказ"</h3>
-                <p>Напиши захватывающую историю о покорении далёких галактик, встрече с инопланетянами или загадках чёрных дыр. Открой читателям дверь в бесконечный космос!</p>
+                <p>Напиши захватывающую историю о покорении далёких галактик, встрече с инопланетянами или загадках
+                    чёрных дыр. Открой читателям дверь в бесконечный космос!</p>
                 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                     <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
-                </div>                
+                    <button
+                        style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                </div>
             </div>
             <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
                 <img src="../img/konk2.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
                 <h3>Конкурс "Модель вселенной"</h3>
-                <p>Представь, что ты архитектор Вселенной! Создай модель галактики, планетной системы или даже целого космоса. Используй любые материалы: 3D-графику, макеты, рисунки или компьютерные симуляции. Покажи, как ты представляешь бесконечный космос и его законы!</p>
+                <p>Представь, что ты архитектор Вселенной! Создай модель галактики, планетной системы или даже целого
+                    космоса. Используй любые материалы: 3D-графику, макеты, рисунки или компьютерные симуляции. Покажи,
+                    как ты представляешь бесконечный космос и его законы!</p>
                 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                     <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
-                </div>                
+                    <button
+                        style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                </div>
             </div>
             <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
                 <img src="../img/konk3.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
                 <h3>Конкурс "Галактический художник"</h3>
-                <p>Создай уникальную космическую картину! Изобрази планеты, звезды, туманности или фантастических инопланетян. Лучшие работы украсят выставку будущего!</p>
+                <p>Создай уникальную космическую картину! Изобрази планеты, звезды, туманности или фантастических
+                    инопланетян. Лучшие работы украсят выставку будущего!</p>
                 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                     <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                    <button
+                        style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
                 </div>
             </div>
             <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
                 <img src="../img/konk4.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
                 <h3>Конкурс "Ракета будущего"</h3>
-                <p>Спроектируй и нарисуй свою идеальную ракету! Какой она будет – гиперскоростной, межгалактической или даже с квантовым двигателем?</p>
+                <p>Спроектируй и нарисуй свою идеальную ракету! Какой она будет – гиперскоростной, межгалактической или
+                    даже с квантовым двигателем?</p>
                 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                     <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
-                </div>                
-            </div><div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
+                    <button
+                        style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                </div>
+            </div>
+            <div style="max-width: 300px; padding: 10px; box-sizing: border-box;">
                 <img src="../img/konk5.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
                 <h3>Конкурс "Ближний космос"</h3>
-                <p> Изучи и покажи, каким ты видишь околоземное пространство! Спутники, космические станции, луноходы, астероиды – создай макет, рисунок или 3D-модель объектов, находящихся рядом с нашей планетой. Может, ты придумаешь новый космический аппарат или колонию на Луне? Дай волю фантазии и покори ближний космос! </p>
+                <p> Изучи и покажи, каким ты видишь околоземное пространство! Спутники, космические станции, луноходы,
+                    астероиды – создай макет, рисунок или 3D-модель объектов, находящихся рядом с нашей планетой. Может,
+                    ты придумаешь новый космический аппарат или колонию на Луне? Дай волю фантазии и покори ближний
+                    космос! </p>
                 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                     <span style="white-space: nowrap; display: flex; align-items: center;">⭐⭐⭐⭐⭐</span>
-                    <button style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
-                </div>                
+                    <button
+                        style="background: none; border: none; color: #63b3ed; cursor: pointer; white-space: nowrap; display: flex; align-items: center;">Подробнее</button>
+                </div>
             </div>
         </div>
     </section>
@@ -287,26 +392,29 @@
                 <h3>Иван Иванов</h3>
                 <p>Отзыв: Очень понравился конкурс, организовано на высшем уровне!</p>
                 <p>Дата: 20.01.2025</p>
-                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о конкурсе</button>
+                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о
+                    конкурсе</button>
             </div>
             <div>
                 <img src="../img/author2.jpg" alt="Автор 2" style="width: 100%; border-radius: 4px; height: 200px;">
                 <h3>Мария Петрова</h3>
                 <p>Отзыв: Прекрасное мероприятие, обязательно буду участвовать снова!</p>
                 <p>Дата: 18.01.2025</p>
-                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о конкурсе</button>
+                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о
+                    конкурсе</button>
             </div>
             <div>
                 <img src="../img/author3.jpg" alt="Автор 3" style="width: 100%; border-radius: 4px;">
                 <h3>Алексей Смирнов</h3>
                 <p>Отзыв: Узнал много нового, все было на высшем уровне.</p>
                 <p>Дата: 15.01.2025</p>
-                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о конкурсе</button>
+                <button style="background: none; border: none; color: #63b3ed; cursor: pointer;">Подробнее о
+                    конкурсе</button>
             </div>
         </div>
     </section>
-    
-    
+
+
     <section>
         <h2>Авторизация</h2>
         <div class="auth-form">
@@ -318,11 +426,16 @@
             </form>
         </div>
     </section>
-    
+
     <section>
         <h2>О нас</h2>
         <div style="display: flex; gap: 20px;">
-            <p>Ярославская область — древний регион с богатейшей историей и великолепной природой. Один из символов ярославской области – это Валентина Терешкова. Первая женщина-космонавт родилась и начинала карьеру в авиации в Ярославской области. Ярославскую область она представляла как депутат в Верховном Совете СССР, была депутатом Ярославской областной Думы, а сейчас представляет регион в Госдуме. В центре Ярославля есть улица Терешковой, ее имя носит ярославский планетарий. Валентина Владимировна, пожалуй, самая известная ярославна.</p>
+            <p>Ярославская область — древний регион с богатейшей историей и великолепной природой. Один из символов
+                ярославской области – это Валентина Терешкова. Первая женщина-космонавт родилась и начинала карьеру в
+                авиации в Ярославской области. Ярославскую область она представляла как депутат в Верховном Совете СССР,
+                была депутатом Ярославской областной Думы, а сейчас представляет регион в Госдуме. В центре Ярославля
+                есть улица Терешковой, ее имя носит ярославский планетарий. Валентина Владимировна, пожалуй, самая
+                известная ярославна.</p>
             <img src="../img/piglet.gif" alt="О нас" style="width: 200px; border-radius: 4px;">
         </div>
     </section>
@@ -330,16 +443,18 @@
         <h2>Подписка на новости</h2>
         <div class="subscribe-form">
             <form style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                <input type="email" placeholder="Введите ваш email" required style="flex-grow: 1; padding: 10px; border: 1px solid #4a5568; border-radius: 4px; background-color: #1a202c; color: white; min-width: 200px;">
+                <input type="email" placeholder="Введите ваш email" required
+                    style="flex-grow: 1; padding: 10px; border: 1px solid #4a5568; border-radius: 4px; background-color: #1a202c; color: white; min-width: 200px;">
                 <label style="display: flex; align-items: center; gap: 5px; color: white; white-space: nowrap;">
                     <input type="checkbox" required>
                     <span>Я соглашаюсь на обработку моих данных</span>
                 </label>
-                <button type="submit" style="padding: 10px 20px; background-color: #63b3ed; border: none; border-radius: 4px; color: white; cursor: pointer;">Подписаться</button>
+                <button type="submit"
+                    style="padding: 10px 20px; background-color: #63b3ed; border: none; border-radius: 4px; color: white; cursor: pointer;">Подписаться</button>
             </form>
         </div>
     </section>
-    <footer>
+    <footer id="footer">
         <p>Контакты: <a href="tel:+74852729361" style="color: #63b3ed;">+7 (4852) 72-93-61</a></p>
         <p>Email: <a href="mailto:yarplaneta@gmail.com" style="color: #63b3ed;">yarplaneta@gmail.com</a></p>
     </footer>
@@ -348,8 +463,13 @@
         const themeToggle = document.getElementById('theme-toggle');
         themeToggle.addEventListener('click', () => {
             document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? '#1a202c' : 'white';
-            document.body.style.color = document.body.style.color === 'black' ? 'white' : 'black';
+            document.body.main.style.color = document.body.style.color === 'black' ? 'white' : 'black';
         });
+
+        function toggleMenu() {
+            document.getElementById('navbarNav').classList.toggle('show');
+        }
     </script>
 </body>
+
 </html>

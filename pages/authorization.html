@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,35 +14,87 @@
             color: white;
         }
 
-        header {
-            background-color: #2d3748;
-            padding: 10px 20px;
+        .logo-div {
             display: flex;
-            justify-content: space-between;
             align-items: center;
         }
 
-        header img {
-            height: 40px;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2d3748;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        header nav a {
-            color: white;
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
             text-decoration: none;
-            margin: 0 10px;
-        }
-
-        header nav a:hover {
-            color: #63b3ed;
-        }
-
-        #theme-toggle {
-            background-color: #4a5568;
             color: white;
+        }
+
+        .navbar-toggler {
+            color: white;
+            display: none;
+            font-size: 1.5em;
+            background: none;
             border: none;
-            border-radius: 50%;
-            padding: 5px 10px;
             cursor: pointer;
+        }
+
+        .navbar-toggler:hover {
+            background-color: #babbbb;
+            border-radius: 5px;
+        }
+
+        .navbar-nav {
+            background-color: #2d3748;
+            display: flex;
+
+        }
+
+        .nav-button {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: 0.3s;
+            background-color: #2d3748;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #babbbb;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 1050px) {
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: #2d3748;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+            }
+
+            .navbar-nav.show {
+                display: flex;
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
         }
 
         .center-text {
@@ -133,25 +186,26 @@
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <div>
-            <img src="../img/logo.png" alt="Логотип">
+    <nav class="navbar">
+        <div class="logo-div">
+            <img src="../img/logo.jpg" alt="Логотип" style="height: 90px;">
+            <a class="navbar-brand" href="#">Мой город - мой космос</a>
         </div>
-        <div class="center-text">
-            <span>Мой город <br> - <br>мой космос</span>
+
+        <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+        <div class="navbar-nav" id="navbarNav">
+            <a class="nav-link" href="registration.html">Регистрация</a>
+            <a class="nav-link" href="authorization.html">Авторизация</a>
+            <a class="nav-link" href="account.html">Личный кабинет</a>
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="schedule.html">Конкурсы</a>
+            <a class="nav-link" href="#">Поиск</a>
+            <a class="nav-link" href="#footer">Контакты</a>
+            <button class="nav-button" id="theme-toggle">Тема</button>
         </div>
-        <nav>
-            <a href="registration.html">Регистрация</a>
-            <a href="auth.html">Авторизация</a>
-            <a href="#">Личный кабинет</a>
-            <a href="#">О нас</a>
-            <a href="#">Конкурсы</a>
-            <a href="#">Поиск</a>
-            <a href="#">Контакты</a>
-            <button id="theme-toggle">Тема</button>
-        </nav>
-    </header>
+    </nav>
 
     <div class="auth-container">
         <div class="auth-form">
@@ -174,8 +228,22 @@
         </div>
     </div>
 
-    <footer>
-        <p>© 2024 Мой город - мой космос. Все права защищены.</p>
+    <footer id="footer">
+        <p>Контакты: <a href="tel:+74852729361" style="color: #63b3ed;">+7 (4852) 72-93-61</a></p>
+        <p>Email: <a href="mailto:yarplaneta@gmail.com" style="color: #63b3ed;">yarplaneta@gmail.com</a></p>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? '#1a202c' : 'white';
+            document.body.main.style.color = document.body.style.color === 'black' ? 'white' : 'black';
+        });
+
+        function toggleMenu() {
+            document.getElementById('navbarNav').classList.toggle('show');
+        }
+    </script>
 </body>
+
 </html>
