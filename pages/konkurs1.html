@@ -116,7 +116,7 @@
 
         .content-div {
             padding: 30px;
-            text-align: center;
+            font-size: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
@@ -124,17 +124,25 @@
             flex-direction: column;
         }
 
-        .content-div td {
-            height: 50px;
-            padding: 0px 5px;
-            border: 2px rgb(179, 179, 179) solid;
-            text-align: center;
-        }
-
         footer {
             background-color: #2d3748;
             text-align: center;
             padding: 10px;
+        }
+
+        .img-div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+
+        img {
+            border-radius: 15px;
+        }
+
+        .raiting-div {
+            text-align: left;
         }
     </style>
 </head>
@@ -163,10 +171,12 @@
 
             <DIV>
                 <h1>Конкурс "Космический рассказ"</h1>
-                <div>
+                <div class="img-div">
                     <img src="../img/konk1.png">
-                    <p>Рейтинг: ⭐⭐⭐⭐⭐</p>
-                    <p>Количество мест: 2</p>
+                    <div class="raiting-div">
+                        <p>Рейтинг: ⭐⭐⭐⭐⭐</p>
+                        <p>Записалось: 20</p>
+                    </div>
                 </div>
 
                 <p>
